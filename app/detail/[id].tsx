@@ -7,11 +7,11 @@ import { IconSymbol } from '@/components/ui/icon-symbol';
 
 // Reusing data for simplicity. In a real app, this would come from a store or API.
 const MENU_ITEMS = [
-    { id: '1', name: 'Hamburguesa Clásica', price: '$120', description: 'Carne de res premium, lechuga, tomate y queso. Acompañada de papas fritas crujientes.', icon: 'fork.knife' },
-    { id: '2', name: 'Tacos al Pastor', price: '$85', description: 'Orden de 5 tacos con piña, cilantro y cebolla. Preparados en trompo tradicional.', icon: 'fork.knife' },
-    { id: '3', name: 'Ensalada César', price: '$95', description: 'Lechuga romana, crutones, queso parmesano y aderezo especial de la casa.', icon: 'leaf.fill' },
-    { id: '4', name: 'Refresco', price: '$25', description: 'Coca-Cola, Sprite, Fanta. Bien frío.', icon: 'drop.fill' },
-    { id: '5', name: 'Pastel de Chocolate', price: '$60', description: 'Rebanada de pastel casero con fresas. El postre perfecto.', icon: 'birthday.cake.fill' },
+    { id: '1', name: 'ensala de fideos', price: '$120', description: 'con pechuga de pollo ala plancha.', icon: 'fork.knife' },
+    { id: '2', name: 'arros con pollo', price: '$85', description: 'con su crema huancaina.', icon: 'fork.knife' },
+    { id: '3', name: 'lomo saltado', price: '$95', description: 'con lechuga romana, crutones, queso parmesano y aderezo especial de la casa.', icon: 'leaf.fill' },
+    { id: '4', name: 'seco de pollo', price: '$25', description: 'con coca-cola, sprite, fanta. Bien frío.', icon: 'drop.fill' },
+    { id: '5', name: 'ensaladas de verduras', price: '$60', description: 'con queso fresco y nueces.', icon: 'birthday.cake.fill' },
 ];
 
 export default function DetailScreen() {
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     iconHeader: {
         height: 200,
-        backgroundColor: '#FFF8F0',
+        backgroundColor: '#d8892dff',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -68,18 +68,18 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 24,
         borderTopRightRadius: 24,
         marginTop: -24,
-        backgroundColor: '#fff', // Should match theme background
+        backgroundColor: '#dc1818ff', // Should match theme background
     },
     title: {
         marginBottom: 8,
     },
     price: {
-        color: '#FF6B00',
+        color: '#27221fff',
         marginBottom: 24,
     },
     separator: {
         height: 1,
-        backgroundColor: '#eee',
+        backgroundColor: '#0a0a0aff',
         marginBottom: 24,
     },
     descriptionLabel: {

@@ -34,10 +34,10 @@ export default function ProfileScreen() {
 
                 <View style={styles.row}>
                     <View style={styles.rowIcon}>
-                        <IconSymbol name="bell.fill" size={20} color="#0e0d0dff" />
+                        <IconSymbol name="bell.fill" size={20} color="#e81d1dff" />
                         <ThemedText style={styles.rowText}>Notificaciones</ThemedText>
                     </View>
-                    <Switch value={notifications} onValueChange={setNotifications} trackColor={{ false: '#767577', true: '#FF6B00' }} />
+                    <Switch value={notifications} onValueChange={setNotifications} trackColor={{ false: '#494545ff', true: '#e36810ff' }} />
                 </View>
 
                 <View style={styles.divider} />
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFF8F0',
+        backgroundColor: '#ea7425ff',
     },
     titleContainer: {
         flexDirection: 'row',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
     section: {
         marginBottom: 24,
-        backgroundColor: '#fff',
+        backgroundColor: '#953333ff',
         borderRadius: 12,
         padding: 16,
         shadowColor: '#000',

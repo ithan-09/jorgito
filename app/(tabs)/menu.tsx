@@ -35,14 +35,14 @@ export default function MenuScreen() {
                     >
                         <ThemedView style={styles.iconContainer}>
                             {/* Using a generic icon for now, would be an image in real app */}
-                            <IconSymbol name="list.bullet" size={24} color="#FF6B00" />
+                            <IconSymbol name="list.bullet" size={24} color="#f9f7f2" />
                         </ThemedView>
                         <View style={styles.textContainer}>
                             <ThemedText type="defaultSemiBold">{item.name}</ThemedText>
                             <ThemedText style={styles.description} numberOfLines={2}>{item.description}</ThemedText>
                             <ThemedText style={styles.price}>{item.price}</ThemedText>
                         </View>
-                        <IconSymbol name="chevron.right" size={20} color="#080808ff" />
+                        <IconSymbol name="chevron.right" size={20} color="#2a2d34" />
                     </TouchableOpacity>
                 )}
             />
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
     header: {
         padding: 20,
         paddingTop: 60,
-        backgroundColor: '#b4cc18ff',
+        backgroundColor: '#d4af37',
         borderBottomWidth: 1,
-        borderBottomColor: '#86d32fff',
+        borderBottomColor: '#ea7425ff',
     },
     listContent: {
         padding: 16,
@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 16,
         marginBottom: 12,
-        backgroundColor: '#f0f0ffff', // Or themed background
+        backgroundColor: '#e85d04', // Or themed background
         borderRadius: 12,
-        shadowColor: '#c7b0b0ff',
+        shadowColor: '#f2e8cf',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: '#3e3bcbff',
+        backgroundColor: '#',
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 16,
@@ -91,13 +91,13 @@ const styles = StyleSheet.create({
     },
     description: {
         fontSize: 14,
-        color: '#da2222ff',
+        color: '#0b0a0aff',
         marginTop: 4,
     },
     price: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#FF6B00',
+        color: '#141313ff',
         marginTop: 4,
     },
 });
