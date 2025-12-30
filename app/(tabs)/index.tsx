@@ -12,16 +12,16 @@ export default function HomeScreen() {
 
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#FFF8F0', dark: '#050505ff' }}
+      headerBackgroundColor={{ light: Colors.light.background, dark: Colors.dark.background }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')} // Keeping existing asset for now, would replace with food image
+          source={require('@/assets/images/partial-react-logo.png')} // Keeping existing asset for now
           style={styles.headerImage}
         />
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Bienvenidos a Jorgito!</ThemedText>
-        <IconSymbol name="house.fill" size={32} color={Colors.light.tint} />
+        <IconSymbol name="house.fill" size={32} color={Colors.light.primary} />
       </ThemedView>
 
       <ThemedView style={styles.stepContainer}>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   promoContainer: {
-    backgroundColor: '#FF6B00',
+    backgroundColor: Colors.light.secondary, // vivid teal for contrast
     padding: 16,
     borderRadius: 12,
     marginTop: 8,

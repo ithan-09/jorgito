@@ -5,25 +5,44 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#FF6B00'; // Orange for Jorgito
-const tintColorDark = '#FF9E40'; // Lighter orange for dark mode
+// Vibrant Color Palette
+const palette = {
+  primary: '#FF5722',   // Bright Orange
+  secondary: '#00BCD4', // Vivid Teal
+  accent: '#FFEB3B',    // Electric Yellow
+  background: '#FAFAFA', // Off-white
+  surface: '#FFFFFF',
+  text: '#212121',
+  textSecondary: '#757575',
+  error: '#e74c3c',
+};
 
 export const Colors = {
   light: {
-    text: '#2D1B0E', // Dark brown
-    background: '#FFF8F0', // Light cream
-    tint: tintColorLight,
-    icon: '#8C5A3C',
-    tabIconDefault: '#8C5A3C',
-    tabIconSelected: tintColorLight,
+    text: palette.text,
+    background: palette.background,
+    tint: palette.primary,
+    icon: palette.secondary,
+    tabIconDefault: palette.textSecondary,
+    tabIconSelected: palette.primary,
+    // Semantic aliases
+    primary: palette.primary,
+    secondary: palette.secondary,
+    accent: palette.accent,
+    card: palette.surface,
   },
   dark: {
     text: '#ECEDEE',
-    background: '#1A110D', // Dark coffee
-    tint: tintColorDark,
+    background: '#121212',
+    tint: palette.primary,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    tabIconSelected: palette.primary,
+    // Semantic aliases
+    primary: palette.primary,
+    secondary: palette.secondary,
+    accent: palette.accent,
+    card: '#1E1E1E',
   },
 };
 

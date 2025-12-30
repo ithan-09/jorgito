@@ -5,6 +5,9 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 
+
+import { Colors } from '@/constants/theme';
+
 // Reusing data for simplicity. In a real app, this would come from a store or API.
 const MENU_ITEMS = [
     { id: '1', name: 'ensala de fideos', price: '$120', description: 'con pechuga de pollo ala plancha.', icon: 'fork.knife' },
@@ -31,7 +34,7 @@ export default function DetailScreen() {
             <Stack.Screen options={{ title: item.name, headerBackTitle: 'Menú' }} />
             <ThemedView style={styles.container}>
                 <View style={styles.iconHeader}>
-                    <IconSymbol name="star.fill" size={80} color="#FF6B00" />
+                    <IconSymbol name="star.fill" size={80} color="#fff" />
                 </View>
 
                 <ThemedView style={styles.content}>
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
     },
     iconHeader: {
         height: 200,
-        backgroundColor: '#d8892dff',
+        backgroundColor: Colors.light.primary,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -68,33 +71,45 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 24,
         borderTopRightRadius: 24,
         marginTop: -24,
-        backgroundColor: '#dc1818ff', // Should match theme background
+        backgroundColor: Colors.light.background,
+        elevation: 10,
     },
     title: {
         marginBottom: 8,
+        color: '#000',
     },
     price: {
-        color: '#27221fff',
+        color: '#000',
         marginBottom: 24,
+        fontWeight: 'bold',
+        fontSize: 24,
     },
     separator: {
         height: 1,
-        backgroundColor: '#0a0a0aff',
+        backgroundColor: Colors.light.accent,
         marginBottom: 24,
+        opacity: 0.5,
     },
     descriptionLabel: {
         fontWeight: 'bold',
         marginBottom: 8,
+        color: '#000',
     },
     description: {
         lineHeight: 24,
         marginBottom: 32,
+        color: '#000',
     },
     button: {
-        backgroundColor: '#FF6B00',
+        backgroundColor: Colors.light.secondary,
         padding: 16,
         borderRadius: 12,
         alignItems: 'center',
+        shadowColor: Colors.light.secondary,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 6,
     },
     buttonText: {
         color: '#fff',

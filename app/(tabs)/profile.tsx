@@ -5,6 +5,7 @@ import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { IconSymbol } from '@/components/ui/icon-symbol';
+import { Colors } from '@/constants/theme';
 
 export default function ProfileScreen() {
     const [notifications, setNotifications] = useState(true);
@@ -12,20 +13,20 @@ export default function ProfileScreen() {
 
     return (
         <ParallaxScrollView
-            headerBackgroundColor={{ light: '#FFF8F0', dark: '#c95523ff' }}
+            headerBackgroundColor={{ light: Colors.light.background, dark: Colors.dark.background }}
             headerImage={
                 <View style={styles.headerPlaceholder}>
-                    <IconSymbol name="person.circle.fill" size={120} color="#FF6B00" />
+                    <IconSymbol name="person.circle.fill" size={120} color="#fff" />
                 </View>
             }>
             <ThemedView style={styles.titleContainer}>
-                <ThemedText type="title">Mi Perfil</ThemedText>
+                <ThemedText type="title" style={{ color: '#cb1818ff' }}>Mi Perfil</ThemedText>
             </ThemedView>
 
             <ThemedView style={styles.section}>
                 <View style={styles.userInfo}>
-                    <ThemedText type="subtitle">Invitado</ThemedText>
-                    <ThemedText>guest@jorgito.com</ThemedText>
+                    <ThemedText type="subtitle" style={{ color: '#000' }}>Invitado</ThemedText>
+                    <ThemedText style={{ color: '#000' }}>guest@jorgito.com</ThemedText>
                 </View>
             </ThemedView>
 
@@ -34,28 +35,28 @@ export default function ProfileScreen() {
 
                 <View style={styles.row}>
                     <View style={styles.rowIcon}>
-                        <IconSymbol name="bell.fill" size={20} color="#e81d1dff" />
+                        <IconSymbol name="bell.fill" size={20} color={Colors.light.primary} />
                         <ThemedText style={styles.rowText}>Notificaciones</ThemedText>
                     </View>
-                    <Switch value={notifications} onValueChange={setNotifications} trackColor={{ false: '#494545ff', true: '#e36810ff' }} />
+                    <Switch value={notifications} onValueChange={setNotifications} trackColor={{ false: '#767577', true: Colors.light.primary }} />
                 </View>
 
                 <View style={styles.divider} />
 
                 <View style={styles.row}>
                     <View style={styles.rowIcon}>
-                        <IconSymbol name="moon.fill" size={20} color="#0e0d0dff" />
+                        <IconSymbol name="moon.fill" size={20} color={Colors.light.secondary} />
                         <ThemedText style={styles.rowText}>Modo Oscuro</ThemedText>
                     </View>
-                    <Switch value={darkMode} onValueChange={setDarkMode} trackColor={{ false: '#767577', true: '#FF6B00' }} />
+                    <Switch value={darkMode} onValueChange={setDarkMode} trackColor={{ false: '#767577', true: Colors.light.secondary }} />
                 </View>
             </ThemedView>
 
             <ThemedView style={styles.section}>
                 <ThemedText type="subtitle" style={styles.sectionTitle}>Acerca de</ThemedText>
-                <ThemedText>Jorgito Restaurant App v1.0.0</ThemedText>
-                <ThemedText>Desarrollado con React Native y Expo.</ThemedText>
-                <ThemedText>Desarrollado por ithan-09.</ThemedText>
+                <ThemedText style={{ color: '#000' }}>Jorgito Restaurant App v1.0.0</ThemedText>
+                <ThemedText style={{ color: '#000' }}>Desarrollado con React Native y Expo.</ThemedText>
+                <ThemedText style={{ color: '#000' }}>Desarrollado por ithan-09.</ThemedText>
             </ThemedView>
         </ParallaxScrollView>
     );
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ea7425ff',
+        backgroundColor: Colors.light.primary,
     },
     titleContainer: {
         flexDirection: 'row',
@@ -76,13 +77,13 @@ const styles = StyleSheet.create({
     },
     section: {
         marginBottom: 24,
-        backgroundColor: '#953333ff',
+        backgroundColor: Colors.light.card,
         borderRadius: 12,
         padding: 16,
-        shadowColor: '#000',
+        shadowColor: Colors.light.primary,
         shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.05,
-        shadowRadius: 2,
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
         elevation: 2,
     },
     userInfo: {
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
     },
     sectionTitle: {
         marginBottom: 16,
+        color: '#000',
     },
     row: {
         flexDirection: 'row',
@@ -104,6 +106,7 @@ const styles = StyleSheet.create({
     },
     rowText: {
         fontSize: 16,
+        color: '#000',
     },
     divider: {
         height: 1,
