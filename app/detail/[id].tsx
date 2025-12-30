@@ -1,20 +1,20 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
 
 
 import { Colors } from '@/constants/theme';
 
 // Reusing data for simplicity. In a real app, this would come from a store or API.
+// Reusing data from menu.tsx to ensure consistency
 const MENU_ITEMS = [
-    { id: '1', name: 'ensala de fideos', price: '$120', description: 'con pechuga de pollo ala plancha.', icon: 'fork.knife' },
-    { id: '2', name: 'arros con pollo', price: '$85', description: 'con su crema huancaina.', icon: 'fork.knife' },
-    { id: '3', name: 'lomo saltado', price: '$95', description: 'con lechuga romana, crutones, queso parmesano y aderezo especial de la casa.', icon: 'leaf.fill' },
-    { id: '4', name: 'seco de pollo', price: '$25', description: 'con coca-cola, sprite, fanta. Bien frío.', icon: 'drop.fill' },
-    { id: '5', name: 'ensaladas de verduras', price: '$60', description: 'con queso fresco y nueces.', icon: 'birthday.cake.fill' },
+    { id: '1', name: 'Ensalada de fideos', price: '$32', description: 'Con pechuga de pollo ala plancha.', image: require('@/assets/images/menu/ensalada_de_fideos.png') },
+    { id: '2', name: 'arroz con pollo', price: '$24', description: 'con su crema huancaina.', image: require('@/assets/images/menu/arroz_con_pollo.png') },
+    { id: '3', name: 'lomo saltado', price: '$95', description: 'de pollo y de res.', image: require('@/assets/images/menu/lomo_saltado.png') },
+    { id: '4', name: 'seco de pollo', price: '$25', description: 'de res o de pollo.', image: require('@/assets/images/menu/seco_de_pollo.png') },
+    { id: '5', name: 'ensalada de veterraga', price: '$60', description: ' con  queso fresco y nueces.', image: require('@/assets/images/menu/ensalada_de_veterraga.png') },
 ];
 
 export default function DetailScreen() {
@@ -33,8 +33,8 @@ export default function DetailScreen() {
         <>
             <Stack.Screen options={{ title: item.name, headerBackTitle: 'Menú' }} />
             <ThemedView style={styles.container}>
-                <View style={styles.iconHeader}>
-                    <IconSymbol name="star.fill" size={80} color="#fff" />
+                <View style={styles.imageHeader}>
+                    <Image source={item.image} style={styles.image} />
                 </View>
 
                 <ThemedView style={styles.content}>
@@ -59,11 +59,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    iconHeader: {
-        height: 200,
-        backgroundColor: Colors.light.primary,
-        justifyContent: 'center',
-        alignItems: 'center',
+    imageHeader: {
+        height: 300, // Taller for better image visibility
+        backgroundColor: Colors.light.background,
+    },
+    image: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
     },
     content: {
         flex: 1,

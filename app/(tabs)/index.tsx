@@ -15,7 +15,7 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: Colors.light.background, dark: Colors.dark.background }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')} // Keeping existing asset for now
+          source={require('@/assets/images/restaurante_header.png')}
           style={styles.headerImage}
         />
       }>

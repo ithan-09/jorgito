@@ -1,6 +1,6 @@
 
 import { useRouter } from 'expo-router';
-import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -11,11 +11,11 @@ import { Colors } from '@/constants/theme';
 
 // Dummy Data
 export const MENU_ITEMS = [
-    { id: '1', name: 'Ensalada de fideos', price: '$32', description: 'Con pechuga de pollo ala plancha.', icon: 'fork.knife' },
-    { id: '2', name: 'arroz con pollo', price: '$24', description: 'con su crema huancaina.', icon: 'fork.knife' },
-    { id: '3', name: 'lomo saltado', price: '$95', description: 'de pollo y de res.', icon: 'leaf.fill' },
-    { id: '4', name: 'seco de pollo', price: '$25', description: 'de res o de pollo.', icon: 'drop.fill' },
-    { id: '5', name: 'ensalada de veterraga', price: '$60', description: ' con  queso fresco y nueces.', icon: 'birthday.cake.fill' },
+    { id: '1', name: 'Ensalada de fideos', price: '$32', description: 'Con pechuga de pollo ala plancha.', image: require('@/assets/images/menu/ensalada_de_fideos.png') },
+    { id: '2', name: 'arroz con pollo', price: '$24', description: 'con su crema huancaina.', image: require('@/assets/images/menu/arroz_con_pollo.png') },
+    { id: '3', name: 'lomo saltado', price: '$95', description: 'de pollo y de res.', image: require('@/assets/images/menu/lomo_saltado.png') },
+    { id: '4', name: 'seco de pollo', price: '$25', description: 'de res o de pollo.', image: require('@/assets/images/menu/seco_de_pollo.png') },
+    { id: '5', name: 'ensalada de veterraga', price: '$60', description: ' con  queso fresco y nueces.', image: require('@/assets/images/menu/ensalada_de_veterraga.png') },
 ];
 
 export default function MenuScreen() {
@@ -37,8 +37,7 @@ export default function MenuScreen() {
                         onPress={() => router.push(`/detail/${item.id}`)}
                     >
                         <ThemedView style={styles.iconContainer}>
-                            {/* Using a generic icon for now, would be an image in real app */}
-                            <IconSymbol name="list.bullet" size={24} color={Colors.light.primary} />
+                            <Image source={item.image} style={styles.menuImage} />
                         </ThemedView>
                         <View style={styles.textContainer}>
                             <ThemedText type="defaultSemiBold" style={{ color: Colors.light.text }}>{item.name}</ThemedText>
@@ -84,13 +83,17 @@ const styles = StyleSheet.create({
         borderLeftColor: Colors.light.secondary,
     },
     iconContainer: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        backgroundColor: Colors.light.accent,
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: 80,
+        height: 80,
+        borderRadius: 12,
+        overflow: 'hidden',
         marginRight: 16,
+        backgroundColor: Colors.light.accent,
+    },
+    menuImage: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
     },
     textContainer: {
         flex: 1,
