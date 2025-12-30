@@ -42,7 +42,7 @@ export default function MenuScreen() {
                             <ThemedText style={styles.description} numberOfLines={2}>{item.description}</ThemedText>
                             <ThemedText style={styles.price}>{item.price}</ThemedText>
                         </View>
-                        <IconSymbol name="chevron.right" size={20} color="#f7f5f5ff" />
+                        <IconSymbol name="chevron.right" size={20} color="#080808ff" />
                     </TouchableOpacity>
                 )}
             />
@@ -57,9 +57,9 @@ const styles = StyleSheet.create({
     header: {
         padding: 20,
         paddingTop: 60,
-        backgroundColor: '#fff',
+        backgroundColor: '#b4cc18ff',
         borderBottomWidth: 1,
-        borderBottomColor: '#eee',
+        borderBottomColor: '#86d32fff',
     },
     listContent: {
         padding: 16,
@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 16,
         marginBottom: 12,
-        backgroundColor: '#fff', // Or themed background
+        backgroundColor: '#f0f0ffff', // Or themed background
         borderRadius: 12,
-        shadowColor: '#000',
+        shadowColor: '#c7b0b0ff',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: '#FFF8F0',
+        backgroundColor: '#3e3bcbff',
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 16,
