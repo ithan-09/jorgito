@@ -1,77 +1,49 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import { Image, StyleSheet } from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { IconSymbol } from '@/components/ui/icon-symbol';
+import { Colors } from '@/constants/theme';
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#FFF8F0', dark: '#050505ff' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/partial-react-logo.png')} // Keeping existing asset for now, would replace with food image
+          style={styles.headerImage}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Bienvenidos a Jorgito!</ThemedText>
+        <IconSymbol name="house.fill" size={32} color={Colors.light.tint} />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
 
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">El mejor sabor de la ciudad</ThemedText>
         <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+          Disfruta de nuestros deliciosos platillos preparados con los ingredientes más frescos.
+          Desde nuestras famosas ensaladas hasta nuestros cortes premium.
         </ThemedText>
       </ThemedView>
+
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText type="subtitle">Horario</ThemedText>
         <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+          Lunes a Viernes: 9:00 AM - 10:00 PM{'\n'}
+          Sábado y Domingo: 10:00 AM - 11:00 PM
+        </ThemedText>
+      </ThemedView>
+
+      <ThemedView style={styles.promoContainer}>
+        <ThemedText type="subtitle" style={styles.promoTitle}>¡Oferta Especial!</ThemedText>
+        <ThemedText style={{ color: '#fff' }}>
+          2x1 en todas las hamburguesas los martes.
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -83,16 +55,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    marginBottom: 16,
   },
   stepContainer: {
     gap: 8,
-    marginBottom: 8,
+    marginBottom: 24,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
+  headerImage: {
+    height: '100%',
+    width: '100%',
     bottom: 0,
     left: 0,
     position: 'absolute',
+    resizeMode: 'cover',
+    opacity: 0.6,
   },
+  promoContainer: {
+    backgroundColor: '#FF6B00',
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 8,
+  },
+  promoTitle: {
+    color: '#fff',
+    marginBottom: 4,
+  }
 });
